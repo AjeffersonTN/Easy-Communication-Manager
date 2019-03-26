@@ -1,0 +1,170 @@
+{
+  "loads": [
+    {
+      "id": 1,
+      "driver_id": 1,
+      "dispatcher_id": 1,
+      "loadName": "Nashville",
+      "pickupAddress": "Clarksville, TN",
+      "deliveryAddress": "Clarksville, TN",
+      "pickupDate": "3/1/19",
+      "deliveryDate": "3/1/19",
+      "rate": "$125.00",
+      "email": "ajeff025@gmail.com"
+    },
+    {
+      "id": 2,
+      "loadName": "Gary",
+      "pickupAddress": "500 Interstate dffgggBlvd",
+      "deliveryAddress": "1234",
+      "pickupDate": "2019-03-21",
+      "deliveryDate": "2019-03-13",
+      "rate": "12",
+      "email": "123499999"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "type_id": 1,
+      "fullName": "antonio",
+      "email": "ajeff025@gmail.com",
+      "password": "abc"
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajeff025@yahoo.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "fullName": "Travis Frey",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "fullName": "Metrogistics",
+      "email": "dispatch@metrogistics.com",
+      "password": "9874",
+      "id": 5
+    },
+    {
+      "fullName": "Metrogistics",
+      "email": "dispatch@metrogistics.com",
+      "password": "444",
+      "id": 7
+    },
+    {
+      "fullName": "Travis Frey",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "1478",
+      "id": 8
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "d",
+      "id": 9
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "kk",
+      "id": 10
+    },
+    {
+      "email": "Grand@gmail.com",
+      "password": "1234",
+      "id": 12
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "1234",
+      "id": 13
+    },
+    {
+      "email": "Grand@gmail.com",
+      "password": "1234",
+      "id": 14
+    },
+    {
+      "fullName": "",
+      "email": "",
+      "password": "",
+      "id": 15
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 16
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "1234",
+      "id": 17
+    },
+    {
+      "email": "Grand@gmail.com",
+      "password": "",
+      "id": 18
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "",
+      "id": 19
+    },
+    {
+      "email": "Grand@gmail.com",
+      "password": "",
+      "id": 20
+    },
+    {
+      "fullName": "Antonio Jefferson",
+      "email": "ajefferson@rocketwaytransport.com",
+      "password": "",
+      "id": 21
+    },
+    {
+      "email": "Grand@gmail.com",
+      "password": "",
+      "id": 22
+    },
+    {
+      "fullName": "",
+      "email": "",
+      "password": "",
+      "id": 23
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 24
+    },
+    {
+      "fullName": "",
+      "email": "",
+      "password": "",
+      "id": 25
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 26
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 27
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "type": 1
+    }
+  ]
+}
