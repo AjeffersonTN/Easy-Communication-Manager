@@ -1,10 +1,12 @@
 import React from 'react';
+import DriverManager from "../../modules/DriverManager"
 
 class LoginPage extends React.Component {
     //set initial state
     state = {
-      userEmailLogin:"",
-      passwordLogin: ""
+      fullName:"",
+      email:"",
+      password: ""
     };
 
     //update state whenever an input field is edited
@@ -15,20 +17,25 @@ class LoginPage extends React.Component {
 
     };
 
-    //prevent default
-    verifyUserAccount = evt => {
-        evt.preventDefault();
-        //use object below to see if account is in database if not alert error
-        const verifiedAccount ={
-            email: this.state.userEmailLogin,
-            password: this.state.passwordLogin
+    handleLogin = e => {
+        e.preventDefault()
+        if (this.state.email && this.state.password) {
+          DriverManager.searchUP(this.state.email, this.state.password).then(
+            user => {
+              if (!user.length) {
+                alert("Wrong email or password!")
+              } else {
+                sessionStorage.setItem("credentials", parseInt(user[0].id))
+                this.props.history.push("/AssignEditLoads")
+                // .then(() => this.props.history.push("/AssignEditLoads"))
+              }
+            }
+          )
+        } else {
+          alert("Please Fill Out Form 😬!")
         }
-        this.props
-        .addUser(verifiedAccount)
-        .then(() => this.props.history.push("/AssignEditLoads"))
+      }
 
-
-    };
 
     render (){
     return (
@@ -37,13 +44,13 @@ class LoginPage extends React.Component {
             <form className="loginForm">
 
                 <div>
-                    <label htmlFor="userEmailLogin">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
                     type="text"
                     required
                     className="create-account-form"
                     onChange={this.handleFieldChange}
-                    id="userEmailLogin"
+                    id="email"
                     />
                 </div>
 
@@ -54,13 +61,13 @@ class LoginPage extends React.Component {
                     required
                     className="create-account-form"
                     onChange={this.handleFieldChange}
-                    id="passwordLogin"
+                    id="password"
                     />
                     <br></br>
 
                     <button
                     type="submit"
-                    onClick= {this.verifyUserAccount}
+                    onClick= {this.handleLogin}
                     className="submitButtons"
                     >Login</button>
 

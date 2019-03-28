@@ -21,4 +21,14 @@ export default {
           body: JSON.stringify(newUser)
         }).then(data => data.json())
     },
+    searchUP(email, password) {
+      return fetch(
+        `${Settings.remoteURL}/users?email=${email}&password=${password}`
+      ).then(e => e.json())
+    },
+    searchemail(email) {
+      return fetch(`${Settings.remoteURL}/users?email=${email}`).then(e =>
+        e.json()
+      )
+    },
 };
