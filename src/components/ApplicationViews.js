@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import { Route, Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Route, Redirect } from 'react-router-dom';
 
-import NewHome from "./DisplayComponents/NewHome"
-import AssignEditLoads from "./DisplayComponents/AssignEditLoads"
-import CreateAccount from "./DisplayComponents/CreateAccount"
-import DispatcherPage from "./DisplayComponents/DispatcherPage"
-import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage"
-import EditLoad from "./DisplayComponents/EditLoad"
-import LoginPage from "./DisplayComponents/LoginPage"
-import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher"
-import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver"
+import NewHome from "./DisplayComponents/NewHome";
+import AssignEditLoads from "./DisplayComponents/AssignEditLoads";
+import CreateAccount from "./DisplayComponents/CreateAccount";
+import DispatcherPage from "./DisplayComponents/DispatcherPage";
+import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage";
+import EditLoad from "./DisplayComponents/EditLoad";
+import LoginPage from "./DisplayComponents/LoginPage";
+import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher";
+import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver";
 
-import DriverManager from "../modules/DriverManager"
-import LoadManager from "../modules/LoadManager"
+import DriverManager from "../modules/DriverManager";
+import LoadManager from "../modules/LoadManager";
 
 class ApplicationViews extends Component {
     state = {

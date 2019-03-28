@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
+
 //Need to add in IDs that link to database
 class CreateAccount extends React.Component {
     //set intitial state

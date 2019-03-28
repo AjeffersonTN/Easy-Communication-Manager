@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import LoadManager from '../../modules/LoadManager';
+import React, { Component } from 'react';
+
 
 class ViewAllLoadsDispatcher extends Component {
 

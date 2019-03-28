@@ -21,6 +21,16 @@
       "deliveryDate": "2019-03-13",
       "rate": "12",
       "email": "123499999"
+    },
+    {
+      "loadName": "Justice",
+      "pickupAddress": "500 Interstate Blvd",
+      "deliveryAddress": "Suite 300",
+      "pickupDate": "2019-03-27",
+      "deliveryDate": "2019-02-26",
+      "rate": "455",
+      "email": "transport@anewtransport.com",
+      "id": 3
     }
   ],
   "users": [

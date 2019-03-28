@@ -1,6 +1,4 @@
 import React from 'react';
-import ViewAllLoadsDispatcher from "./ViewAllLoadsDispatcher"
-
 
 class LoginPage extends React.Component {
     //set initial state

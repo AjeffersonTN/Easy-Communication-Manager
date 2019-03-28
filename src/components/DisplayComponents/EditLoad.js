@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import LoadManager from '../../modules/LoadManager';
 
 export default class EditLoad extends Component {
