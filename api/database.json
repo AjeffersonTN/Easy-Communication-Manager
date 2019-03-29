@@ -36,49 +36,24 @@
   "users": [
     {
       "id": 1,
-      "type_id": 1,
+      "type_id": "1",
       "fullName": "antonio",
       "email": "ajeff025@gmail.com",
       "password": "abc"
     },
     {
       "fullName": "Antonio Jefferson",
+      "type_id": 1,
       "email": "ajeff025@yahoo.com",
       "password": "1234",
       "id": 2
     },
     {
       "fullName": "Travis Frey",
+      "type_id": 1,
       "email": "bob",
       "password": "1234",
       "id": 3
-    },
-    {
-      "email": "boby",
-      "password": "1234",
-      "id": 4
-    },
-    {
-      "fullName": "",
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "email": "ajefferson@rocketwaytransport.com",
-      "password": "1234",
-      "id": 6
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "fullName": "Travis Frey",
-      "email": "travis",
-      "password": "1234",
-      "id": 8
     }
   ],
   "types": [
