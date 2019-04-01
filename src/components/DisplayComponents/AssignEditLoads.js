@@ -171,34 +171,3 @@ class AssignEditLoads extends React.Component {
     }
 }
 export default AssignEditLoads
-{/* <select
-  defaultValue=""
-  name="candyType"
-  id="candyTypeId"
-  onChange={this.handleFieldChange}
->
-  <option value="">Select an candy type</option>
-  {this.props.candyTypes.map(ct => (
-    <option key={ct.id} id={ct.id} value={ct.id}>
-      {ct.name}
-    </option>
-  ))}
-</select> */}
-
-{/* <div>
-<label htmlFor="driver">Select Driver:</label>
-<select
- defaultValue=""
- name="driver"
- onChange={this.handleFieldChange}
- id="driverId">
-<option value="">Select a Driver</option>
-{/* {
-    this.props.users.map(e => (
-        <option key={e.id} id={e.id} value={e.id}>
-        {e.fullName}
-        </option>
-    ))
-} */}
-// </select>
-// </div> */}
