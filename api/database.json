@@ -1,19 +1,8 @@
 {
   "loads": [
     {
-      "id": 1,
-      "driver_id": 1,
-      "dispatcher_id": 1,
-      "loadName": "Nashville",
-      "pickupAddress": "Clarksville, TN",
-      "deliveryAddress": "Clarksville, TN",
-      "pickupDate": "3/1/19",
-      "deliveryDate": "3/1/19",
-      "rate": "$125.00",
-      "email": "ajeff025@gmail.com"
-    },
-    {
       "id": 2,
+      "driver_id": 1,
       "loadName": "Gary",
       "pickupAddress": "500 Interstate dffgggBlvd",
       "deliveryAddress": "1234",
@@ -23,20 +12,29 @@
       "email": "123499999"
     },
     {
+      "id": 3,
       "loadName": "Justice",
       "pickupAddress": "500 Interstate Blvd",
       "deliveryAddress": "Suite 300",
       "pickupDate": "2019-03-27",
       "deliveryDate": "2019-02-26",
-      "rate": "455",
-      "email": "transport@anewtransport.com",
-      "id": 3
+      "rate": "500",
+      "email": "transport@anewtransport.com"
+    },
+    {
+      "loadName": "kikjkkk",
+      "pickupAddress": "",
+      "deliveryAddress": "kk",
+      "pickupDate": "",
+      "deliveryDate": "",
+      "rate": "",
+      "email": "",
+      "id": 4
     }
   ],
   "users": [
     {
       "id": 1,
-      "type_id": "1",
       "fullName": "antonio",
       "email": "ajeff025@gmail.com",
       "password": "abc"
@@ -50,7 +48,7 @@
     },
     {
       "fullName": "Travis Frey",
-      "type_id": 1,
+      "type_id": 2,
       "email": "bob",
       "password": "1234",
       "id": 3
@@ -60,6 +58,10 @@
     {
       "id": 1,
       "type": 1
+    },
+    {
+      "id": 2,
+      "type": 2
     }
   ]
 }

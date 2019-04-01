@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ApplicationViews from "../ApplicationViews";
-import NavBar from "../NavBar";
+import Nav from "../Nav";
 
 
 
@@ -9,7 +9,7 @@ class HomePage extends Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar />
+                <Nav />
                 <ApplicationViews />
             </React.Fragment>
         )

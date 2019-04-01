@@ -1,15 +1,15 @@
 import Settings from "./Settings";
 
 export default {
-    getUser(id) {
+    get(id) {
         return fetch(`${Settings.remoteURL}/users/${id}`).then(e => e.json());
     },
-    deleteUser(id) {
+    delete(id) {
       return fetch(`${Settings.remoteURL}/loads/${id}`, {
           "method": "DELETE"
       }).then(e => e.json());
     },
-    getAllUsers() {
+    getAll() {
         return fetch(`${Settings.remoteURL}/users`).then(e => e.json());
     },
     addUser(newUser) {
@@ -31,4 +31,6 @@ export default {
         e.json()
       )
     },
+
+
 };

@@ -1,20 +1,23 @@
 import React, { Component } from "react";
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-import NewHome from "./DisplayComponents/NewHome";
+
 import AssignEditLoads from "./DisplayComponents/AssignEditLoads";
-import CreateAccount from "./DisplayComponents/CreateAccount";
+
 import DispatcherPage from "./DisplayComponents/DispatcherPage";
 import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage";
 import EditLoad from "./DisplayComponents/EditLoad";
-import LoginPage from "./DisplayComponents/LoginPage";
+import Login from "../components/auth/Login";
 import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher";
 import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver";
 
-import DriverManager from "../modules/DriverManager";
+import UserManager from "../modules/UserManager";
 import LoadManager from "../modules/LoadManager";
 
+
+
 class ApplicationViews extends Component {
+
     state = {
         users: [],
         types: [],
@@ -33,7 +36,7 @@ class ApplicationViews extends Component {
     getAllLoads = () =>
             LoadManager.getAllLoads().then(loads => this.setState({ loads: loads }))
     getLoad = (id) =>
-        LoadManager.get(id)
+        LoadManager.getLoad(id)
             .then(LoadManager.getAllLoads)
             .then(loads => this.setState({ loads: loads }))
 
@@ -54,26 +57,26 @@ class ApplicationViews extends Component {
     }
 
     addUser = newUser => {
-        return DriverManager.addUser(newUser)
-            .then(() => DriverManager.getAllUsers())
+        return UserManager.addUser(newUser)
+            .then(() => UserManager.getAll())
             .then(users =>
                 this.setState({
                     users: users
                 })
             )
     }
-    getUser = (id) =>
-    DriverManager.get(id)
-            .then(DriverManager.getAllUsers)
+    get = (id) =>
+    UserManager.get(id)
+            .then(UserManager.getAll)
             .then(users => this.setState({ users: users }))
 
-    deleteUser = (id) =>
-    DriverManager.delete(id)
-            .then(DriverManager.getAllUsers)
+    delete = (id) =>
+    UserManager.delete(id)
+            .then(UserManager.getAll)
             .then(users => this.setState({ users: users }))
 
-    getAllUsers = () =>
-    DriverManager.getAllUsers().then(users => this.setState({ users: users }))
+    getAll = () =>
+    UserManager.getAll().then(users => this.setState({ users: users }))
 
     componentDidMount() {
         const newState = {}
@@ -81,27 +84,44 @@ class ApplicationViews extends Component {
         LoadManager.getAllLoads()
             .then(loads => newState.loads = loads)
             .then(() => this.setState(newState))
-        DriverManager.getAllUsers()
+        UserManager.getAll()
             .then(users => newState.users = users)
             .then(() => this.setState(newState))
     }
 
     render() {
+        let id;
         return (
             <React.Fragment>
 
-                <Route exact path="/CreateAccount" render={(props) => {
-                    return <CreateAccount
-                                {...props}
-                                addUser={this.addUser}
-                                users={this.state.users}/>
+                <Route exact path="/" render={(props) => {
+                    if (Number(sessionStorage.getItem("type_id")) === 2){
+
+                        return <AssignEditLoads
+                                    {...props}
+                                    addLoad={this.addLoad}
+                                    getAllLoads={this.getAllLoads}
+                                    getAll={this.getAll}
+                                    users={this.state.users}
+                                    />
+                    } else if (Number(sessionStorage.getItem("type_id")) === 1){
+                        return <ViewAllLoadsDriver
+                        {...props}
+                        getLoad={this.getLoad(id)}
+                        addLoad={this.addLoad}
+                        getAllLoads={this.getAllLoads}
+                        getAll={this.getAll}
+                        users={this.state.users}/>
+          }
+
+
                 }} />
                 <Route exact path="/AssignEditLoads" render={(props) => {
                     return <AssignEditLoads
                                 {...props}
                                 addLoad={this.addLoad}
                                 getAllLoads={this.getAllLoads}
-                                getAllUsers={this.getAllUsers}
+                                getAll={this.getAll}
                                 users={this.state.users}
                                 />
                 }} />
@@ -111,25 +131,17 @@ class ApplicationViews extends Component {
                 <Route exact path="/DriversConfirmationPage" render={() => {
                     return <DriversConfirmationPage />
                 }} />
-                <Route exact path="/LoginPage" render={(props) => {
-                    return <LoginPage
+                {/* <Route exact path="/Login" render={(props) => {
+                    return <Login
                     {...props}
                                 addUser={this.addUser}
                                 users={this.state.users} />
-                }} />
-                <Route exact path="/" render={(props) => {
-                    return <NewHome
-                    {...props}
-                                addLoad={this.addLoad}
-                                getAllLoads={this.getAllLoads}
-                                getAllUsers={this.getAllUsers}
-                                users={this.state.users}
+                }} /> */}
 
-                     />
-                }} />
+
                 <Route exact path="/ViewAllLoadsDispatcher" render={(props) => {
                     return <ViewAllLoadsDispatcher
-                    deleteLoad={this.deleteLoad}
+                                 deleteLoad={this.deleteLoad}
                                  getAllLoads={this.getAllLoads}
                                  loads={this.state.loads}
                                  {...props} />
@@ -144,7 +156,8 @@ class ApplicationViews extends Component {
                 <Route exact path="/ViewAllLoadsDriver" render={(props) => {
                     return <ViewAllLoadsDriver
                                 {...props}
-                                getAllLoads={this.getAllLoads} />
+                                getAllLoads={this.getAllLoads}
+                                loads={this.state.loads}/>
                 }} />
 
                 <Route exact path="/ViewAllLoadsDispatcher/:loadId(\d+)" render={props => {

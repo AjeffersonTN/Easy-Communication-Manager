@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 
 
 class NavBar extends Component {
+    logout = () => {
+        sessionStorage.clear("credentials")
+        this.props.setAuth()
+      }
     render() {
         return (
             <nav className="navbar">
                 <ul className="nav nav-pills">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/">Home</Link>
-                    </li>
+
                     <li className="nav-item">
                         <Link className="nav-link" to="/ViewAllLoadsDispatcher">View Loads</Link>
                     </li>
@@ -17,7 +19,12 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/AssignEditLoads">Assign Laods</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/LoginPage">Logout</Link>
+                    <button className="btnNav"
+                            type="button"
+                            onClick={this.logout}>
+                            Logout
+                        </button>
+
                     </li>
                 </ul>
             </nav>

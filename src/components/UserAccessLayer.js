@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import Nav from "./nav/Nav"
+import Nav from "./Nav"
 import ApplicationViews from "./ApplicationViews"
-import DriverManager from "../modules/DriverManager"
+import UserManager from "../modules/UserManager"
 
 export default class UserAccessLayer extends Component {
   state = {
@@ -9,7 +9,7 @@ export default class UserAccessLayer extends Component {
   }
 
   componentDidMount() {
-    DriverManager.get(this.activeUserId()).then(activeUser =>
+    UserManager.get(this.activeUserId()).then(activeUser =>
       this.setState({ activeUser: activeUser })
     )
   }

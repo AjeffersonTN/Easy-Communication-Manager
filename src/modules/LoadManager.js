@@ -14,7 +14,7 @@ export default {
       }).then(data => data.json())
    },
     getLoad(id) {
-        return fetch(`${Settings.remoteURL}/loads/${id}`).then(e => e.json());
+        return fetch(`${Settings.remoteURL}/loads/?driver_id=${id}`).then(e => e.json());
     },
     deleteLoad(id) {
         return fetch(`${Settings.remoteURL}/loads/${id}`, {
@@ -29,5 +29,10 @@ export default {
           },
           body: JSON.stringify(editedLoad)
         }).then(data => data.json());
-    }
+    },
+    getLoadsByUser(type_id) {
+      return fetch (`${Settings.remoteURL}/users/?type_id=${type_id}}`).then(e =>
+        e.json()
+      )
+      }
 };

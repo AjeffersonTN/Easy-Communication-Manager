@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Nutshell from "./components/Nutshell"
 import { BrowserRouter as Router } from "react-router-dom"
-import HomePage from "./components/DisplayComponents/HomePage"
+
 
 
 ReactDOM.render(
     <Router>
-        <HomePage />
+        <Nutshell />
+
     </Router>
     , document.getElementById('root'))
