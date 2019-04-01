@@ -28,6 +28,7 @@ class AssignEditLoads extends React.Component {
             deliveryDate: this.state.loadDeliveryDate,
             rate: this.state.loadRate,
             email: this.state.loadEmail,
+            notes: this.state.notes,
             userId: parseInt(sessionStorage.getItem('crdentials'))
         }
         console.log(newLoad)
@@ -122,6 +123,15 @@ class AssignEditLoads extends React.Component {
                          className="create-account-form"
                          onChange={this.handleFieldChange}
                          id="loadRate" />
+                    </div>
+                    <div>
+                        <label htmlFor="loadNotes">Notes:</label>
+                        <input
+                         type="text"
+                         required
+                         className="create-account-form"
+                         onChange={this.handleFieldChange}
+                         id="loadNotes" />
                     </div>
 
                     <div className="form-group">

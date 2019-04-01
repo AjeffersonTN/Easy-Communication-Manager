@@ -19,9 +19,9 @@ class ViewAllLoadsDispatcher extends Component {
                             Pickup Date: {loads.pickupDate}<br></br>
                             Delivery Address: {loads.deliveryAddress}<br></br>
                             Delivery Date: {loads.deliveryDate} <br></br>
-                            Email: {loads.email}
-                            <br></br>
-                            Rate: {loads.rate}
+                            Email: {loads.email}<br></br>
+                            Rate: {loads.rate}<br></br>
+                            Notes: {loads.notes}<br></br>
                                 <div>
                                 <button
                                 type="button"

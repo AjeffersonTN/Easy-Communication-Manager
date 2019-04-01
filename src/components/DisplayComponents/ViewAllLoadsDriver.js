@@ -21,7 +21,17 @@ class ViewAllLoadsDriver extends Component {
                             Delivery Date: {loads.deliveryDate} <br></br>
                             Email: {loads.email}
                             <br></br>
-                            Rate: {loads.rate}
+                            Rate: {loads.rate}<br></br>
+                            Notes: {loads.notes}<br></br>
+                            <button
+                                type="button"
+                                className="btn btn-success"
+                                onClick={() => {
+                                    this.props.history.push(`/loads/${loads.id}/edit`);
+                                }}
+                                >
+                                Add Notes
+                                </button>
 
                             </div>
                             </h5>

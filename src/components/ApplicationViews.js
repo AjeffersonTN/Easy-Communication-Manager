@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Route, Redirect } from 'react-router-dom';
-import { browserHistory } from "history";
-
 
 import AssignEditLoads from "./DisplayComponents/AssignEditLoads";
 import DispatcherPage from "./DisplayComponents/DispatcherPage";
 import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage";
 import EditLoad from "./DisplayComponents/EditLoad";
+import DriverEdit from "./DisplayComponents/DriverEdit";
 import Login from "../components/auth/Login";
 import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher";
 import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver";
@@ -109,12 +108,7 @@ let id;
                     } else{
 
                         return <Redirect to="/ViewAllLoadsDriver" />
-                        // {...props}
-                        // deleteLoad={this.deleteLoad(id)}
-                        // addLoad={this.addLoad}
-                        // getAllLoads={this.getAllLoads}
-                        // getAll={this.getAll}
-                        // users={this.state.users}/>
+
           }
 
 
@@ -162,6 +156,7 @@ let id;
                                 getAllLoads={this.getAllLoads}
                                 deleteLoad={this.deleteLoad}
                                 loads={this.state.loads}
+                                updateLoad={this.updateLoad}
                                 {...props}/>
                 }} />
 
@@ -177,6 +172,7 @@ let id;
                         />
                         <Route
                         path="/loads/:loadId(\d+)/edit" render={(props) => {
+                            if (Number(sessionStorage.getItem("type_id")) === 2){
                             return( <EditLoad
                             {...props}
                             updateLoad={this.updateLoad}
@@ -184,13 +180,18 @@ let id;
                             users={this.state.users}
                             />
                             );
-                        }}
+                        } else {
+                            return( <DriverEdit
+                                {...props}
+                                updateLoad={this.updateLoad}
+                                loads={this.state.loads}
+                                users={this.state.users}
+                                />
+                        ) }
+                    }
+                    }
                         />
             </React.Fragment>
 
-
-        )
-    }
-}
-
+        )}}
 export default ApplicationViews

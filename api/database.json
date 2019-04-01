@@ -1,39 +1,54 @@
 {
   "loads": [
     {
-      "id": 3,
+      "id": 4,
       "loadName": "Justice",
       "pickupAddress": "500 Interstate Blvd",
       "deliveryAddress": "Suite 300",
       "pickupDate": "2019-03-27",
       "deliveryDate": "2019-02-26",
       "rate": "500",
-      "email": "transport@anewtransport.com"
+      "email": "transport@anewtransport.com",
+      "notes": "Hot Sauce Sauce",
+      "userId": 3
     },
     {
-      "loadName": "Gary",
-      "pickupAddress": "",
-      "deliveryAddress": "fefeffffff",
-      "pickupDate": "2019-04-09",
-      "deliveryDate": "",
-      "rate": "",
-      "email": "",
-      "userId": null,
-      "id": 4
+      "id": 6,
+      "loadName": "Justice",
+      "pickupAddress": "500 Interstate Blvd",
+      "deliveryAddress": "Suite 300",
+      "pickupDate": "2019-03-27",
+      "deliveryDate": "2019-02-26",
+      "rate": "500",
+      "email": "transport@anewtransport.com",
+      "notes": "Delivered",
+      "userId": 4
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "loadName": "Justice",
+      "pickupAddress": "500 Interstate Blvd",
+      "deliveryAddress": "Suite 300",
+      "pickupDate": "2019-03-27",
+      "deliveryDate": "2019-02-26",
+      "rate": "500",
+      "email": "transport@anewtransport.com",
+      "notes": "Hot Sauce"
     }
   ],
   "users": [
     {
       "fullName": "Antonio Jefferson",
       "type_id": 1,
-      "email": "1234",
+      "email": "Driver",
       "password": "1234",
       "id": 4
     },
     {
       "fullName": "Travis Frey",
       "type_id": 2,
-      "email": "bob",
+      "email": "Dispatcher",
       "password": "1234",
       "id": 3
     }
