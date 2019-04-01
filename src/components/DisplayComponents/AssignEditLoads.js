@@ -29,7 +29,7 @@ class AssignEditLoads extends React.Component {
             rate: this.state.loadRate,
             email: this.state.loadEmail,
             notes: this.state.notes,
-            userId: parseInt(sessionStorage.getItem('crdentials'))
+            userId: parseInt(sessionStorage.getItem('credentials'))
         }
         console.log(newLoad)
         //post newLoad to API and redirect to load list

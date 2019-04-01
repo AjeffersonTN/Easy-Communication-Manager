@@ -13,19 +13,7 @@
       "userId": 3
     },
     {
-      "id": 6,
-      "loadName": "Justice",
-      "pickupAddress": "500 Interstate Blvd",
-      "deliveryAddress": "Suite 300",
-      "pickupDate": "2019-03-27",
-      "deliveryDate": "2019-02-26",
-      "rate": "500",
-      "email": "transport@anewtransport.com",
-      "notes": "Delivered",
-      "userId": 4
-    },
-    {
-      "id": 5,
+      "id": 8,
       "userId": 4,
       "loadName": "Justice",
       "pickupAddress": "500 Interstate Blvd",
