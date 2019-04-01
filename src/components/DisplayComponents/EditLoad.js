@@ -30,7 +30,8 @@ export default class EditLoad extends Component {
         pickupDate: this.state.pickupDate,
         deliveryDate: this.state.deliveryDate,
         rate: this.state.rate,
-        email: this.state.email
+        email: this.state.email,
+        userId: parseInt(sessionStorage.getItem('crdentials'))
 
       };
 

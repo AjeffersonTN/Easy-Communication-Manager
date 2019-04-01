@@ -23,7 +23,6 @@ class ViewAllLoadsDispatcher extends Component {
                             <br></br>
                             Rate: {loads.rate}
                                 <div>
-
                                 <button
                                 type="button"
                                 className="btn btn-success"

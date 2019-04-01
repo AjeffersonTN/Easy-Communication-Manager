@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ViewAllLoadsDriver extends React.Component {
+
+class ViewAllLoadsDriver extends Component {
 
     render() {
 
@@ -22,7 +23,6 @@ class ViewAllLoadsDriver extends React.Component {
                             <br></br>
                             Rate: {loads.rate}
 
-                                <hr></hr>
                             </div>
                             </h5>
                         </div>

@@ -27,7 +27,8 @@ class AssignEditLoads extends React.Component {
             pickupDate: this.state.loadPickupDate,
             deliveryDate: this.state.loadDeliveryDate,
             rate: this.state.loadRate,
-            email: this.state.loadEmail
+            email: this.state.loadEmail,
+            userId: parseInt(sessionStorage.getItem('crdentials'))
         }
         console.log(newLoad)
         //post newLoad to API and redirect to load list

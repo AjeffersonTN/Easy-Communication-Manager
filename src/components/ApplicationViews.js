@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { browserHistory } from "history";
 
 
 import AssignEditLoads from "./DisplayComponents/AssignEditLoads";
-
 import DispatcherPage from "./DisplayComponents/DispatcherPage";
 import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage";
 import EditLoad from "./DisplayComponents/EditLoad";
 import Login from "../components/auth/Login";
 import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher";
 import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver";
+// import {Redirect} from "react-router"
 
 import UserManager from "../modules/UserManager";
 import LoadManager from "../modules/LoadManager";
@@ -23,6 +24,7 @@ class ApplicationViews extends Component {
         types: [],
         loads: []
     }
+    // aUserId = this.props.activeUserID()
 
     addLoad = newLoad => {
         return LoadManager.addLoad(newLoad)
@@ -90,7 +92,7 @@ class ApplicationViews extends Component {
     }
 
     render() {
-        let id;
+let id;
         return (
             <React.Fragment>
 
@@ -104,14 +106,15 @@ class ApplicationViews extends Component {
                                     getAll={this.getAll}
                                     users={this.state.users}
                                     />
-                    } else if (Number(sessionStorage.getItem("type_id")) === 1){
-                        return <ViewAllLoadsDriver
-                        {...props}
-                        getLoad={this.getLoad(id)}
-                        addLoad={this.addLoad}
-                        getAllLoads={this.getAllLoads}
-                        getAll={this.getAll}
-                        users={this.state.users}/>
+                    } else{
+
+                        return <Redirect to="/ViewAllLoadsDriver" />
+                        // {...props}
+                        // deleteLoad={this.deleteLoad(id)}
+                        // addLoad={this.addLoad}
+                        // getAllLoads={this.getAllLoads}
+                        // getAll={this.getAll}
+                        // users={this.state.users}/>
           }
 
 
@@ -155,9 +158,11 @@ class ApplicationViews extends Component {
                 }} /> */}
                 <Route exact path="/ViewAllLoadsDriver" render={(props) => {
                     return <ViewAllLoadsDriver
-                                {...props}
+
                                 getAllLoads={this.getAllLoads}
-                                loads={this.state.loads}/>
+                                deleteLoad={this.deleteLoad}
+                                loads={this.state.loads}
+                                {...props}/>
                 }} />
 
                 <Route exact path="/ViewAllLoadsDispatcher/:loadId(\d+)" render={props => {
