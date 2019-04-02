@@ -1,5 +1,6 @@
 import React from 'react';
-
+// import "../../App.css"
+import "../../index.css"
 class AssignEditLoads extends React.Component {
     state = {
         loadName:"",
@@ -53,8 +54,9 @@ class AssignEditLoads extends React.Component {
     render () {
         return (
             <React.Fragment>
+
+                <form className="formLoad">
                 <h1>Assign Loads</h1>
-                <form className="assignEditLoads">
 
                     <div>
                         <label htmlFor="loadName">Load Name:</label>
@@ -75,6 +77,15 @@ class AssignEditLoads extends React.Component {
                         onChange={this.handleFieldChange}
                         id="loadPickupDate" />
                     </div>
+                    <div>
+                        <label htmlFor="loadPickupAddress">Pickup Address:</label>
+                        <input
+                         type="text"
+                         required
+                         className="create-account-form"
+                         onChange={this.handleFieldChange}
+                         id="loadPickupAddress" />
+                    </div>
 
                     <div>
                         <label htmlFor="loadDeliveryDate">Delivery Date:</label>
@@ -86,15 +97,6 @@ class AssignEditLoads extends React.Component {
                         id="loadDeliveryDate" />
                     </div>
 
-                    <div>
-                        <label htmlFor="loadPickupAddress">Pickup Address:</label>
-                        <input
-                         type="text"
-                         required
-                         className="create-account-form"
-                         onChange={this.handleFieldChange}
-                         id="loadPickupAddress" />
-                    </div>
                     <div>
                         <label htmlFor="loadDeliveryAddress">Delivery Address:</label>
                         <input
@@ -126,7 +128,7 @@ class AssignEditLoads extends React.Component {
                     </div>
                     <div>
                         <label htmlFor="loadNotes">Notes:</label>
-                        <input
+                        <textarea
                          type="text"
                          required
                          className="create-account-form"

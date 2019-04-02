@@ -7,10 +7,10 @@
       "deliveryAddress": "Suite 300",
       "pickupDate": "2019-03-27",
       "deliveryDate": "2019-02-26",
-      "rate": "500",
+      "rate": "$500",
       "email": "transport@anewtransport.com",
-      "notes": "Hot Sauce Sauce",
-      "userId": 3
+      "notes": "Car Sucks",
+      "userId": 4
     },
     {
       "id": 9,
@@ -23,6 +23,29 @@
       "email": "info@loadrpm.com",
       "notes": "Delivered",
       "userId": 4
+    },
+    {
+      "id": 10,
+      "loadName": "Sam Smith Chevy",
+      "pickupAddress": "4140 Highway 41A S",
+      "deliveryAddress": "803 West Blvd",
+      "pickupDate": "2019-04-03",
+      "deliveryDate": "2019-04-19",
+      "rate": "$750",
+      "email": "ajefferson@rocketwaytransport.com",
+      "notes": "Too Good At Good Bye",
+      "userId": 4
+    },
+    {
+      "loadName": "Jaxon",
+      "pickupAddress": "208 SW 74TH ST",
+      "deliveryAddress": "4104 Yarn Dr",
+      "pickupDate": "2019-04-24",
+      "deliveryDate": "2019-04-16",
+      "rate": "$580",
+      "email": "akjeff025@gmail.com",
+      "userId": 3,
+      "id": 11
     }
   ],
   "users": [

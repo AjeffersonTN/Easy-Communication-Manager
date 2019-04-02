@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../../index.css"
 
 
 class ViewAllLoadsDispatcher extends Component {
@@ -15,10 +16,10 @@ class ViewAllLoadsDispatcher extends Component {
                             <h5 className="card-title">
                             <div>
                             Load Name: {loads.loadName}<br></br>
-                            Pickup Address: {loads.pickupAddress}<br></br>
                             Pickup Date: {loads.pickupDate}<br></br>
-                            Delivery Address: {loads.deliveryAddress}<br></br>
+                            Pickup Address: {loads.pickupAddress}<br></br>
                             Delivery Date: {loads.deliveryDate} <br></br>
+                            Delivery Address: {loads.deliveryAddress}<br></br>
                             Email: {loads.email}<br></br>
                             Rate: {loads.rate}<br></br>
                             Notes: {loads.notes}<br></br>

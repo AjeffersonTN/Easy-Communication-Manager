@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoadManager from '../../modules/LoadManager';
-
+import "../../index.css"
 export default class EditLoad extends Component {
    // Set initial state
    state = {
@@ -154,7 +154,7 @@ export default class EditLoad extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="Notes">Notes:</label>
-            <input
+            <textarea
               type="text"
               required
               className="form-control"

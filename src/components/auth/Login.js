@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./login.css"
+
 import UserManager from "../../modules/UserManager"
 
 export default class Login extends Component {

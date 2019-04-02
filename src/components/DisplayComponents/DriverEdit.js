@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LoadManager from '../../modules/LoadManager';
+import "../../index.css"
 
 export default class DriverEdit extends Component {
    // Set initial state
