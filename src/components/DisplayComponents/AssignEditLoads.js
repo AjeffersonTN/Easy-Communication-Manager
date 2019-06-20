@@ -1,5 +1,6 @@
 import React from 'react';
-
+// import "../../App.css"
+import "../../index.css"
 class AssignEditLoads extends React.Component {
     state = {
         loadName:"",
@@ -27,7 +28,9 @@ class AssignEditLoads extends React.Component {
             pickupDate: this.state.loadPickupDate,
             deliveryDate: this.state.loadDeliveryDate,
             rate: this.state.loadRate,
-            email: this.state.loadEmail
+            email: this.state.loadEmail,
+            notes: this.state.notes,
+            userId: parseInt(sessionStorage.getItem('credentials'))
         }
         console.log(newLoad)
         //post newLoad to API and redirect to load list
@@ -51,8 +54,9 @@ class AssignEditLoads extends React.Component {
     render () {
         return (
             <React.Fragment>
+
+                <form className="formLoad">
                 <h1>Assign Loads</h1>
-                <form className="assignEditLoads">
 
                     <div>
                         <label htmlFor="loadName">Load Name:</label>
@@ -73,6 +77,15 @@ class AssignEditLoads extends React.Component {
                         onChange={this.handleFieldChange}
                         id="loadPickupDate" />
                     </div>
+                    <div>
+                        <label htmlFor="loadPickupAddress">Pickup Address:</label>
+                        <input
+                         type="text"
+                         required
+                         className="create-account-form"
+                         onChange={this.handleFieldChange}
+                         id="loadPickupAddress" />
+                    </div>
 
                     <div>
                         <label htmlFor="loadDeliveryDate">Delivery Date:</label>
@@ -84,15 +97,6 @@ class AssignEditLoads extends React.Component {
                         id="loadDeliveryDate" />
                     </div>
 
-                    <div>
-                        <label htmlFor="loadPickupAddress">Pickup Address:</label>
-                        <input
-                         type="text"
-                         required
-                         className="create-account-form"
-                         onChange={this.handleFieldChange}
-                         id="loadPickupAddress" />
-                    </div>
                     <div>
                         <label htmlFor="loadDeliveryAddress">Delivery Address:</label>
                         <input
@@ -121,6 +125,15 @@ class AssignEditLoads extends React.Component {
                          className="create-account-form"
                          onChange={this.handleFieldChange}
                          id="loadRate" />
+                    </div>
+                    <div>
+                        <label htmlFor="loadNotes">Notes:</label>
+                        <textarea
+                         type="text"
+                         required
+                         className="create-account-form"
+                         onChange={this.handleFieldChange}
+                         id="loadNotes" />
                     </div>
 
                     <div className="form-group">
@@ -160,34 +173,3 @@ class AssignEditLoads extends React.Component {
     }
 }
 export default AssignEditLoads
-{/* <select
-  defaultValue=""
-  name="candyType"
-  id="candyTypeId"
-  onChange={this.handleFieldChange}
->
-  <option value="">Select an candy type</option>
-  {this.props.candyTypes.map(ct => (
-    <option key={ct.id} id={ct.id} value={ct.id}>
-      {ct.name}
-    </option>
-  ))}
-</select> */}
-
-{/* <div>
-<label htmlFor="driver">Select Driver:</label>
-<select
- defaultValue=""
- name="driver"
- onChange={this.handleFieldChange}
- id="driverId">
-<option value="">Select a Driver</option>
-{/* {
-    this.props.users.map(e => (
-        <option key={e.id} id={e.id} value={e.id}>
-        {e.fullName}
-        </option>
-    ))
-} */}
-// </select>
-// </div> */}

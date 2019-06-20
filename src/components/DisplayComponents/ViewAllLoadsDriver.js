@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import "../../index.css"
 
-class ViewAllLoadsDriver extends React.Component {
+
+class ViewAllLoadsDriver extends Component {
 
     render() {
 
         return (
             <section className="loads">
-            <h1>Available Loads</h1>
+            <h1>Travis's Active Loads</h1>
             {
                 this.props.loads.map(loads =>
                     <div key={loads.id} className="card">
@@ -20,9 +22,18 @@ class ViewAllLoadsDriver extends React.Component {
                             Delivery Date: {loads.deliveryDate} <br></br>
                             Email: {loads.email}
                             <br></br>
-                            Rate: {loads.rate}
+                            Rate: {loads.rate}<br></br>
+                            Notes: {loads.notes}<br></br>
+                            <button
+                                type="button"
+                                className="btn btn-success"
+                                onClick={() => {
+                                    this.props.history.push(`/loads/${loads.id}/edit`);
+                                }}
+                                >
+                                Add Notes
+                                </button>
 
-                                <hr></hr>
                             </div>
                             </h5>
                         </div>

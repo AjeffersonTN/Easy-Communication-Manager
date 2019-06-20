@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./login.css"
+
 import UserManager from "../../modules/UserManager"
 
 export default class Login extends Component {
@@ -57,32 +57,31 @@ export default class Login extends Component {
       alert("Please Fill Out Form 😬!")
     }
   }
-
   render() {
     return (
       <React.Fragment>
-      <h1>Welcome To ECM</h1>
       <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label htmlFor="inputUsername">Username</label>
+        <h1 className="h3 mb-3 font-weight-normal"> Welcome To Easy Communication Manager (ECM)</h1>
+        <h2 className="h3 mb-3 font-weight-normal">Please Sign In</h2>
+        <label htmlFor="inputUsername">Username: </label>
         <input
           onChange={this.handleFieldChange}
           type="username"
           id="username"
-          placeholder={` Something Cool`}
+          placeholder={`Huh!`}
           required=""
           autoFocus=""
         />
-        <label htmlFor="inputPassword">Password</label>
+        <label htmlFor="inputPassword">Password: </label>
         <input
           onChange={this.handleFieldChange}
           type="password"
           id="password"
-          placeholder={` Don't tell!`}
+          placeholder={`Tell!`}
           required=""
         />
         <button type="submit" onClick={this.handleLogin}>
-          Sign in
+          Sign In
         </button>
         <button type="submit" onClick={this.handleRegister}>
           Register

@@ -1,55 +1,75 @@
 {
   "loads": [
     {
-      "id": 2,
-      "driver_id": 1,
-      "loadName": "Gary",
-      "pickupAddress": "500 Interstate dffgggBlvd",
-      "deliveryAddress": "1234",
-      "pickupDate": "2019-03-21",
-      "deliveryDate": "2019-03-13",
-      "rate": "12",
-      "email": "123499999"
+      "id": 10,
+      "loadName": "Sam Smith Chevy",
+      "pickupAddress": "4140 Highway 41A S",
+      "deliveryAddress": "803 West Blvd",
+      "pickupDate": "2019-04-03",
+      "deliveryDate": "2019-04-19",
+      "rate": "$750",
+      "email": "ajefferson@rocketwaytransport.com",
+      "notes": "Too Good At Good Bye",
+      "userId": 4
     },
     {
-      "id": 3,
-      "loadName": "Justice",
+      "loadName": "Ram To TX",
       "pickupAddress": "500 Interstate Blvd",
-      "deliveryAddress": "Suite 300",
-      "pickupDate": "2019-03-27",
-      "deliveryDate": "2019-02-26",
-      "rate": "500",
-      "email": "transport@anewtransport.com"
+      "deliveryAddress": "4140 Highway 41A S",
+      "pickupDate": "2019-04-18",
+      "deliveryDate": "",
+      "rate": "$7000",
+      "email": "ajefferson@rocketwaytransport.com",
+      "userId": 3,
+      "id": 12
     },
     {
-      "loadName": "kikjkkk",
-      "pickupAddress": "",
-      "deliveryAddress": "kk",
-      "pickupDate": "",
-      "deliveryDate": "",
-      "rate": "",
-      "email": "",
-      "id": 4
+      "id": 13,
+      "loadName": "Broke Car",
+      "pickupAddress": "123 Main St",
+      "deliveryAddress": "123 Main St",
+      "pickupDate": "2019-04-01",
+      "deliveryDate": "2019-04-01",
+      "rate": "$56000",
+      "email": "dispatch@metrogistics.com",
+      "notes": "Can not carry car no hood",
+      "userId": 4
+    },
+    {
+      "id": 15,
+      "loadName": "Nss Demo",
+      "pickupAddress": "500 Interstate Blvd",
+      "deliveryAddress": "4140 Highway 41A S",
+      "pickupDate": "2019-04-02",
+      "deliveryDate": "2019-04-03",
+      "rate": "$200",
+      "email": "transport@anewtransport.com",
+      "userId": 3
+    },
+    {
+      "loadName": "TNtoMexixo",
+      "pickupAddress": "4140 Highway 41A S",
+      "deliveryAddress": "123 Main St",
+      "pickupDate": "2019-06-17",
+      "deliveryDate": "2019-06-26",
+      "rate": "600.00",
+      "email": "ajefferson.dev@gmail.com",
+      "userId": 3,
+      "id": 16
     }
   ],
   "users": [
     {
-      "id": 1,
-      "fullName": "antonio",
-      "email": "ajeff025@gmail.com",
-      "password": "abc"
-    },
-    {
       "fullName": "Antonio Jefferson",
       "type_id": 1,
-      "email": "ajeff025@yahoo.com",
+      "email": "Driver",
       "password": "1234",
-      "id": 2
+      "id": 4
     },
     {
       "fullName": "Travis Frey",
       "type_id": 2,
-      "email": "bob",
+      "email": "Dispatcher",
       "password": "1234",
       "id": 3
     }

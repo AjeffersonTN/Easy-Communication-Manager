@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import LoadManager from '../../modules/LoadManager';
 import "../../index.css"
-export default class EditLoad extends Component {
+
+export default class DriverEdit extends Component {
    // Set initial state
    state = {
 
-      dispatcher_id: "",
-      driver_id: "",
-      loadName: "",
-      pickupAddress: "",
-      deliveryAddress: "",
-      pickupDate: "",
-      deliveryDate: "",
-      rate: "",
-      email: "",
-      notes: "",
+        dispatcher_id: "",
+        driver_id: "",
+        loadName: "",
+        pickupAddress: "",
+        deliveryAddress: "",
+        pickupDate: "",
+        deliveryDate: "",
+        rate: "",
+        email: "",
+        notes: "",
 
   }
 
@@ -46,14 +47,13 @@ export default class EditLoad extends Component {
       };
 
   this.props.updateLoad(editedLoad)
-  .then(() => this.props.history.push("/viewAllLoadsDispatcher"))
+  .then(() => this.props.history.push("/viewAllLoadsDriver"))
   }
 }
 
   componentDidMount() {
     LoadManager.getLoad(this.props.match.params.loadId)
     .then(load => {
-      // debugger
       this.setState({
         dispatcher_id: load.dispatcher_id,
         driver_id: load.driver_id,
@@ -63,7 +63,6 @@ export default class EditLoad extends Component {
         pickupDate: load.pickupDate,
         deliveryDate: load.deliveryDate,
         rate: load.rate,
-        notes: load.notes,
         email:load.email
 
       });
@@ -78,7 +77,7 @@ export default class EditLoad extends Component {
             ">Load Name:</label>
             <input
               type="text"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="0loadName"
@@ -89,7 +88,7 @@ export default class EditLoad extends Component {
             <label htmlFor="pickupAddress">Pickup Address:</label>
             <input
               type="text"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="pickupAddress"
@@ -100,7 +99,7 @@ export default class EditLoad extends Component {
             <label htmlFor="deliveryAddress">Delivery Address:</label>
             <input
               type="text"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="deliveryAddress"
@@ -111,7 +110,7 @@ export default class EditLoad extends Component {
             <label htmlFor="pickUpDate">Pickup Date:</label>
             <input
               type="date"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="date"
@@ -122,7 +121,7 @@ export default class EditLoad extends Component {
             <label htmlFor="deliveryDate">Delivery Date:</label>
             <input
               type="date"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="deliveryDate"
@@ -134,7 +133,7 @@ export default class EditLoad extends Component {
             <label htmlFor="email">Email:</label>
             <input
               type="text"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="email"
@@ -145,7 +144,7 @@ export default class EditLoad extends Component {
             <label htmlFor="rate">Rate:</label>
             <input
               type="text"
-              required
+              readOnly
               className="form-control"
               onChange={this.handleFieldChange}
               id="rate"
@@ -154,7 +153,7 @@ export default class EditLoad extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="Notes">Notes:</label>
-            <textarea
+            <input
               type="text"
               required
               className="form-control"

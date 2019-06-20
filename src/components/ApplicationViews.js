@@ -1,21 +1,14 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom';
-
-
+import { Route, Redirect } from 'react-router-dom';
 import AssignEditLoads from "./DisplayComponents/AssignEditLoads";
-
 import DispatcherPage from "./DisplayComponents/DispatcherPage";
 import DriversConfirmationPage from "./DisplayComponents/DriversConfirmationPage";
 import EditLoad from "./DisplayComponents/EditLoad";
-import Login from "../components/auth/Login";
+import DriverEdit from "./DisplayComponents/DriverEdit";
 import ViewAllLoadsDispatcher from "./DisplayComponents/ViewAllLoadsDispatcher";
 import ViewAllLoadsDriver from "./DisplayComponents/ViewAllLoadsDriver";
-
 import UserManager from "../modules/UserManager";
 import LoadManager from "../modules/LoadManager";
-
-
-
 class ApplicationViews extends Component {
 
     state = {
@@ -90,7 +83,7 @@ class ApplicationViews extends Component {
     }
 
     render() {
-        let id;
+
         return (
             <React.Fragment>
 
@@ -104,19 +97,12 @@ class ApplicationViews extends Component {
                                     getAll={this.getAll}
                                     users={this.state.users}
                                     />
-                    } else if (Number(sessionStorage.getItem("type_id")) === 1){
-                        return <ViewAllLoadsDriver
-                        {...props}
-                        getLoad={this.getLoad(id)}
-                        addLoad={this.addLoad}
-                        getAllLoads={this.getAllLoads}
-                        getAll={this.getAll}
-                        users={this.state.users}/>
+                    } else{
+                        return <Redirect to="/ViewAllLoadsDriver" />
           }
-
-
                 }} />
                 <Route exact path="/AssignEditLoads" render={(props) => {
+                     if (Number(sessionStorage.getItem("type_id")) === 2){
                     return <AssignEditLoads
                                 {...props}
                                 addLoad={this.addLoad}
@@ -124,6 +110,15 @@ class ApplicationViews extends Component {
                                 getAll={this.getAll}
                                 users={this.state.users}
                                 />
+                     }else {
+                        alert("You Don't Have Access!!!")
+                        return <ViewAllLoadsDriver
+                        getAllLoads={this.getAllLoads}
+                        deleteLoad={this.deleteLoad}
+                        loads={this.state.loads}
+                        updateLoad={this.updateLoad}
+                        {...props}/>
+                        }
                 }} />
                 <Route exact path="/DispatcherPage" render={() => {
                     return <DispatcherPage />
@@ -131,35 +126,32 @@ class ApplicationViews extends Component {
                 <Route exact path="/DriversConfirmationPage" render={() => {
                     return <DriversConfirmationPage />
                 }} />
-                {/* <Route exact path="/Login" render={(props) => {
-                    return <Login
-                    {...props}
-                                addUser={this.addUser}
-                                users={this.state.users} />
-                }} /> */}
-
-
                 <Route exact path="/ViewAllLoadsDispatcher" render={(props) => {
+                     if (Number(sessionStorage.getItem("type_id")) === 2){
                     return <ViewAllLoadsDispatcher
                                  deleteLoad={this.deleteLoad}
                                  getAllLoads={this.getAllLoads}
                                  loads={this.state.loads}
                                  {...props} />
+                     }else {
+                        alert("Your Loads Are Displayed!!!")
+                        return <ViewAllLoadsDriver
+                        getAllLoads={this.getAllLoads}
+                        deleteLoad={this.deleteLoad}
+                        loads={this.state.loads}
+                        updateLoad={this.updateLoad}
+                        {...props}/>
+                        }
+
                 }} />
-                {/* <Route exact path="/ViewAllLoadsDispatcher/:loadId(\d+)" render={(props) => {
-                    return <ViewAllLoadsDispatcher
-                    deleteLoad={this.deleteLoad}
-                                 getAllLoads={this.getAllLoads}
-                                 loads={this.state.loads}
-                                 {...props} />
-                }} /> */}
                 <Route exact path="/ViewAllLoadsDriver" render={(props) => {
                     return <ViewAllLoadsDriver
-                                {...props}
                                 getAllLoads={this.getAllLoads}
-                                loads={this.state.loads}/>
+                                deleteLoad={this.deleteLoad}
+                                loads={this.state.loads}
+                                updateLoad={this.updateLoad}
+                                {...props}/>
                 }} />
-
                 <Route exact path="/ViewAllLoadsDispatcher/:loadId(\d+)" render={props => {
                             return (
                             <AssignEditLoads
@@ -170,8 +162,8 @@ class ApplicationViews extends Component {
                             );
                         }}
                         />
-                        <Route
-                        path="/loads/:loadId(\d+)/edit" render={(props) => {
+                        <Route path="/loads/:loadId(\d+)/edit" render={(props) => {
+                            if (Number(sessionStorage.getItem("type_id")) === 2){
                             return( <EditLoad
                             {...props}
                             updateLoad={this.updateLoad}
@@ -179,13 +171,18 @@ class ApplicationViews extends Component {
                             users={this.state.users}
                             />
                             );
-                        }}
+                        } else {
+                            return( <DriverEdit
+                                {...props}
+                                updateLoad={this.updateLoad}
+                                loads={this.state.loads}
+                                users={this.state.users}
+                                />
+                        ) }
+                    }}
                         />
             </React.Fragment>
-
-
         )
     }
 }
-
 export default ApplicationViews

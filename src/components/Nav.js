@@ -13,20 +13,16 @@ class NavBar extends Component {
                 <ul className="nav nav-pills">
 
                     <li className="nav-item">
+                        <Link className="nav-link" to="/" onClick={this.logout}>Logout </Link>
+                    </li>
+
+                    <li className="nav-item">
                         <Link className="nav-link" to="/ViewAllLoadsDispatcher">View Loads</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/AssignEditLoads">Assign Laods</Link>
+                        <Link className="nav-link" to="/AssignEditLoads">Assign Loads</Link>
                     </li>
-                    <li className="nav-item">
-                    <button className="btnNav"
-                            type="button"
-                            onClick={this.logout}>
-                            Logout
-                        </button>
-
-                    </li>
-                </ul>
+                  </ul>
             </nav>
         )
     }

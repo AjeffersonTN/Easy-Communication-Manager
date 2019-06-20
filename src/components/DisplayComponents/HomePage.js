@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApplicationViews from "../ApplicationViews";
 import Nav from "../Nav";
+import "../../index.css"
 
 
 

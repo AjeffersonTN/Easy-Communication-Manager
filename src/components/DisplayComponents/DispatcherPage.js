@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../../index.css"
 class DispatcherPage extends React.Component {
     render () {
     return (
