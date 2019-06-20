@@ -1,4 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Open 2 git bashes
+go to the api server input json-server -p 3001 -w database.json
+go to root folder input npm start
+
+the app will run on localhost:3000
+open to separate windows login as
+Driver 1234
+Dispatcher 1234 -->
 
 ## Available Scripts
 

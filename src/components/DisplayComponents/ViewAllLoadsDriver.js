@@ -8,7 +8,7 @@ class ViewAllLoadsDriver extends Component {
 
         return (
             <section className="loads">
-            <h1>Available Loads</h1>
+            <h1>Travis's Active Loads</h1>
             {
                 this.props.loads.map(loads =>
                     <div key={loads.id} className="card">
